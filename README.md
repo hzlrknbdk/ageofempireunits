@@ -5,6 +5,13 @@
 npm install
 ```
 
+# Install json-server globally
+$ npm install json-server -g
+
+
+# From within the working directory:
+$ json-server units.json
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
