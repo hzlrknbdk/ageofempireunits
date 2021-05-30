@@ -121,7 +121,7 @@ import { FilterButton } from "@/api/filter-button.interface";
 import { EnumAgesFilter } from "@/api/ages-filter.enum";
 
 @Component
-class UnitsPage extends Vue {
+export default class UnitsPage extends Vue {
   rangeSliderOfWood: number = 0;
   rangeSliderOfFood: number = 0;
   rangeSliderOfGold: number = 0;
@@ -270,6 +270,7 @@ class UnitsPage extends Vue {
 
   async created() {
     await unitsModule.getUnits();
+    this.agesFilter.forEach(f => (f.active = false));
     this.onClickAgeFilter(this.agesFilter[0]);
   }
 
@@ -329,7 +330,6 @@ class UnitsPage extends Vue {
   }
 }
 
-export default UnitsPage;
 </script>
 
 <style scoped lang="scss">
